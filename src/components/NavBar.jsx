@@ -1,45 +1,71 @@
 import React from "react";
 import CartWidget from "./CartWidget";
 
-const Navbar = () => {
+const Header = () => {
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Navbar
-          </a>
+    <header className=" header-nav container-fluid d-flex">
+      <div className=" container">
+        <div className="container d-flex justify-content-between align-items-center">
+          <div>
+            <a className="navbar-brand" href="#">
+              <h3>{"{DevStore}"}</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <nav className="navbar navbar-expand-lg">
+        <div className="container">
           <button
             className="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#navbarOffcanvas"
+            aria-controls="navbarOffcanvas"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Link
-                </a>
-              </li>
-            </ul>
-
-            <CartWidget />
+          <div
+            className="offcanvas offcanvas-end"
+            tabIndex="-1"
+            id="navbarOffcanvas"
+            aria-labelledby="navbarOffcanvasLabel"
+          >
+            <div className="offcanvas-header">
+              <h5 className="offcanvas-title" id="navbarOffcanvasLabel">
+                Menu
+              </h5>
+              <button
+                type="button"
+                className="btn-close text-reset"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="offcanvas-body">
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <a className="nav-link text-white" href="#">
+                    Shop
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link text-white" href="#">
+                    Ayuda
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link text-white" href="#">
+                    <CartWidget></CartWidget>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </nav>
-    </div>
+    </header>
   );
 };
 
-export default Navbar;
+export default Header;

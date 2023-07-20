@@ -69,3 +69,25 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.header-nav {
+  border-bottom: solid 0.5px gainsboro;
+  color: white;
+}
+.header-nav:hover {
+  background-color: gainsboro;
+  color: black;
+}
+.header {
+  /* Utilizamos linear-gradient para crear el gradiente */
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(/src/assets/images/pexels-christina-morillo-1181677.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 40rem;
+}

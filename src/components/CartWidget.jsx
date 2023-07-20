@@ -3,7 +3,7 @@ import { FaShoppingCart } from "react-icons/fa";
 
 const CartWidget = () => {
   return (
-    <div>
+    <div className="d-flex">
       <FaShoppingCart />
       <p>3</p>
     </div>

@@ -6,9 +6,9 @@ import "bootstrap/dist/js/bootstrap.min.js";
 
 const App = () => {
   return (
-    <div>
+    <div className="header">
       <NavBar />
-      <ItemListContainer greeting="¡Bienvenido a nuestra tienda!" />
+      <ItemListContainer greeting="¡Bienvenidxs a nuestra tienda!" />
     </div>
   );
 };
