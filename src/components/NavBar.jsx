@@ -1,71 +1,57 @@
 import React from "react";
+import brand from "../assets/images/DEVSTOREBRAND.png";
+import {
+  Menu,
+  MenuButton,
+  Button,
+  MenuList,
+  MenuItem,
+  Flex,
+  Box,
+  Spacer,
+} from "@chakra-ui/react";
+import { ChevronDownIcon } from "@chakra-ui/icons";
+import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
 
-const Header = () => {
+const NavBar = () => {
   return (
-    <header className=" header-nav container-fluid d-flex">
-      <div className=" container">
-        <div className="container d-flex justify-content-between align-items-center">
-          <div>
-            <a className="navbar-brand" href="#">
-              <h3>{"{DevStore}"}</h3>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <nav className="navbar navbar-expand-lg">
-        <div className="container">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#navbarOffcanvas"
-            aria-controls="navbarOffcanvas"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div
-            className="offcanvas offcanvas-end"
-            tabIndex="-1"
-            id="navbarOffcanvas"
-            aria-labelledby="navbarOffcanvasLabel"
-          >
-            <div className="offcanvas-header">
-              <h5 className="offcanvas-title" id="navbarOffcanvasLabel">
-                Menu
-              </h5>
-              <button
-                type="button"
-                className="btn-close text-reset"
-                data-bs-dismiss="offcanvas"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="offcanvas-body">
-              <ul className="navbar-nav">
-                <li className="nav-item">
-                  <a className="nav-link text-white" href="#">
-                    Shop
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link text-white" href="#">
-                    Ayuda
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link text-white" href="#">
-                    <CartWidget></CartWidget>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+    <header>
+      <nav>
+        <Flex>
+          <Box p="4">
+            <Menu>
+              <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+                Shop
+              </MenuButton>
+              <MenuList>
+                <MenuItem>
+                  <Link to={`/category/${"Remeras"}`}>Merch</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to={`/category/${"Mousepads"}`}>Mousepads</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to={`/category/${"Teclados"}`}>Teclados</Link>
+                </MenuItem>
+              </MenuList>
+            </Menu>
+          </Box>{" "}
+          <Spacer />
+          <Box p="4">
+            <Link to={"/"}>
+              <h1 className="brand">DevStore</h1>
+              {/* <img src={brand} alt="" width="100px" height="100px" /> */}
+            </Link>
+          </Box>
+          <Spacer />
+          <Box>
+            <CartWidget></CartWidget>
+          </Box>
+        </Flex>
       </nav>
     </header>
   );
 };
 
-export default Header;
+export default NavBar;
