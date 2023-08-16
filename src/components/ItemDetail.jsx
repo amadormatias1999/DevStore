@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
   Card,
@@ -18,9 +18,11 @@ import ItemCount from "./ItemCount";
 
 const ItemDetail = ({ productos }) => {
   const { id } = useParams();
-
-  const filteredProducts = productos.filter((producto) => producto.id == id);
-
+  const filteredProducts = productos.filter((productos) => productos.id == id);
+  const [quantityAdded, setQuantityAdded] = useState(0);
+  const handleOnAdd = (quantity) => {
+    setQuantityAdded(quantity);
+  };
   return (
     <Center>
       {filteredProducts.map((p) => {
@@ -43,13 +45,13 @@ const ItemDetail = ({ productos }) => {
             <Divider />
 
             <CardFooter>
-              <ButtonGroup spacing="15">
-                <Button className="btn-c">Comprar</Button>
-                <Button>
-                  <ItemCount />
-                </Button>
-                <Button className="btn-a">Agregar al carrito</Button>
-              </ButtonGroup>
+              {quantityAdded > 0 ? (
+                <Link to="/cart">
+                  <Button className="btn-a">Terminar mi compra</Button>
+                </Link>
+              ) : (
+                <ItemCount onAdd={handleOnAdd} />
+              )}
             </CardFooter>
           </Card>
         );

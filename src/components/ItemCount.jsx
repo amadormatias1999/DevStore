@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-
-import { ButtonGroup, Button, IconButton } from "@chakra-ui/react";
+import { ButtonGroup, Button, IconButton, Divider } from "@chakra-ui/react";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 
-const ItemCount = () => {
+const ItemCount = ({ onAdd }) => {
   const [counter, setCounter] = useState(0);
 
   const increment = () => {
@@ -18,16 +17,24 @@ const ItemCount = () => {
     }
   };
 
-  const reset = () => {
-    setCounter(0);
+  const handleAddToCart = () => {
+    onAdd(counter);
   };
 
   return (
-    <ButtonGroup size="md" isAttached variant="outline">
-      <IconButton onClick={decrement} icon={<MinusIcon />} />
-      <Button>{counter}</Button>
-      <IconButton onClick={increment} icon={<AddIcon />} />
-    </ButtonGroup>
+    <>
+      <ButtonGroup size="md" isAttached variant="outline">
+        <IconButton onClick={decrement} icon={<MinusIcon />} />
+        <Button>{counter}</Button>
+        <IconButton onClick={increment} icon={<AddIcon />} />
+      </ButtonGroup>
+      <Divider />
+      <ButtonGroup>
+        <Button className="btn-a" onClick={handleAddToCart}>
+          Agregar al carrito
+        </Button>
+      </ButtonGroup>
+    </>
   );
 };
 

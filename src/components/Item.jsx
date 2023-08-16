@@ -10,6 +10,7 @@ import {
   Divider,
   ButtonGroup,
   Image,
+  Center,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
@@ -37,7 +38,6 @@ const Item = ({ nombre, description, id, category, image }) => {
             <Button className="btn-c">
               <Link to={`/item/${id}`}>Detalles</Link>
             </Button>
-            <Button className="btn-a">Agregar al Carrito</Button>
           </ButtonGroup>
         </CardFooter>
       </Card>

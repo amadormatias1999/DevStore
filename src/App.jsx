@@ -50,6 +50,8 @@ import Home from "./components/Home";
 import Ayuda from "./components/Ayuda";
 
 import Cart from "./components/Cart";
+import ShoppingCartContext from "./context/ShoppingCartContext";
+import ComponenteA from "./components/ComponenteA";
 
 const App = () => {
   return (
