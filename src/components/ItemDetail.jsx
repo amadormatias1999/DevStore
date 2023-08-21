@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
   Card,
@@ -15,18 +15,21 @@ import {
 } from "@chakra-ui/react";
 
 import ItemCount from "./ItemCount";
-import { useCartContext } from "./CartContext";
+import { CartContext } from "./CartContext";
 
 const ItemDetail = ({ productos }) => {
   const { id } = useParams();
   const filteredProducts = productos.filter((productos) => productos.id == id);
   const [quantityAdded, setQuantityAdded] = useState(0);
-  const { addToCart, isInCart } = useCartContext(); // Use the context hook
-  const handleOnAdd = (quantity) => {
+
+  const { addItem } = useContext(CartContext);
+
+  const handleOnAdd = (quantity, productos) => {
     setQuantityAdded(quantity);
-    const selectedProduct = filteredProducts[0];
-    addToCart(selectedProduct, quantity);
+    const item = filteredProducts[0];
+    addItem(item, quantity);
   };
+
   return (
     <Center>
       {filteredProducts.map((p) => {
@@ -49,14 +52,7 @@ const ItemDetail = ({ productos }) => {
             <Divider />
             <CardFooter>
               {quantityAdded > 0 ? (
-                <Button
-                  className="btn-a"
-                  onClick={() => {
-                    const selectedProduct = filteredProducts[0];
-                    addToCart(selectedProduct, quantityAdded);
-                    console.log(selectedProduct);
-                  }}
-                >
+                <Button className="btn-a">
                   <Link to="/cart">Finalizar compra</Link>
                 </Button>
               ) : (

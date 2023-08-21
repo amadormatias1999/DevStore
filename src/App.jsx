@@ -7,12 +7,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Ayuda from "./components/Ayuda";
 import Cart from "./components/Cart";
-import { CartContextProvider } from "./components/CartContext";
+import { CartProvider } from "./components/CartContext";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <CartContextProvider>
+      <CartProvider>
         <NavBar />
 
         <Routes>
@@ -27,7 +27,7 @@ const App = () => {
           />
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
         </Routes>
-      </CartContextProvider>
+      </CartProvider>
     </BrowserRouter>
   );
 };
