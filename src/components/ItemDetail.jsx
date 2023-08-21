@@ -15,13 +15,17 @@ import {
 } from "@chakra-ui/react";
 
 import ItemCount from "./ItemCount";
+import { useCartContext } from "./CartContext";
 
 const ItemDetail = ({ productos }) => {
   const { id } = useParams();
   const filteredProducts = productos.filter((productos) => productos.id == id);
   const [quantityAdded, setQuantityAdded] = useState(0);
+  const { addToCart, isInCart } = useCartContext(); // Use the context hook
   const handleOnAdd = (quantity) => {
     setQuantityAdded(quantity);
+    const selectedProduct = filteredProducts[0];
+    addToCart(selectedProduct, quantity);
   };
   return (
     <Center>
@@ -43,12 +47,18 @@ const ItemDetail = ({ productos }) => {
               </Stack>
             </CardBody>
             <Divider />
-
             <CardFooter>
               {quantityAdded > 0 ? (
-                <Link to="/cart">
-                  <Button className="btn-a">Terminar mi compra</Button>
-                </Link>
+                <Button
+                  className="btn-a"
+                  onClick={() => {
+                    const selectedProduct = filteredProducts[0];
+                    addToCart(selectedProduct, quantityAdded);
+                    console.log(selectedProduct);
+                  }}
+                >
+                  <Link to="/cart">Finalizar compra</Link>
+                </Button>
               ) : (
                 <ItemCount onAdd={handleOnAdd} />
               )}
