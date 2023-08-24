@@ -1,5 +1,4 @@
 import React from "react";
-import brand from "../assets/images/DEVSTOREBRAND.png";
 import {
   Menu,
   MenuButton,
@@ -41,7 +40,6 @@ const NavBar = () => {
           <Box p="4">
             <Link to={"/"}>
               <h1 className="brand">DevStore</h1>
-              {/* <img src={brand} alt="" width="100px" height="100px" /> */}
             </Link>
           </Box>
           <Spacer />

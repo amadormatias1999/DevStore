@@ -4,7 +4,6 @@ import { CartContext } from "./CartContext";
 import { Link } from "react-router-dom";
 import Item from "./Item";
 import { Button } from "@chakra-ui/react";
-// import CartItem from "./CartItem";
 
 const Cart = () => {
   const { cart, clearCart, removeItem, total } = useContext(CartContext);

@@ -1,6 +1,5 @@
 import React from "react";
 import Item from "./Item";
-// import { Center, Image } from "@chakra-ui/react";
 
 const ItemList = ({ productos }) => {
   return (
