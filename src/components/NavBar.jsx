@@ -46,9 +46,7 @@ const NavBar = () => {
           </Box>
           <Spacer />
           <Box>
-            <Link to={"/Cart"}>
-              <CartWidget />
-            </Link>
+            <CartWidget />
           </Box>
         </Flex>
       </nav>

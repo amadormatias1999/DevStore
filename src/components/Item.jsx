@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-const Item = ({ nombre, description, id, category, image }) => {
+const Item = ({ nombre, description, id, category, image, precio }) => {
   return (
     <>
       <Card className="card" maxW="sm">
@@ -27,9 +27,7 @@ const Item = ({ nombre, description, id, category, image }) => {
 
             <Text>{description}</Text>
             <Text>{category}</Text>
-            <Text color="blue.600" fontSize="2xl">
-              $450
-            </Text>
+            <Text> {precio}</Text>
           </Stack>
         </CardBody>
         <Divider />

@@ -24,7 +24,7 @@ const ItemDetail = ({ productos }) => {
 
   const { addItem } = useContext(CartContext);
 
-  const handleOnAdd = (quantity, productos) => {
+  const handleOnAdd = (quantity) => {
     setQuantityAdded(quantity);
     const item = filteredProducts[0];
     addItem(item, quantity);
@@ -45,7 +45,7 @@ const ItemDetail = ({ productos }) => {
                 <Text>{p.description}</Text>
                 <Text>{p.category}</Text>
                 <Text color="blue.600" fontSize="2xl">
-                  $450
+                  {p.precio}
                 </Text>
               </Stack>
             </CardBody>

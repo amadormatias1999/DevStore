@@ -10,6 +10,7 @@ const ItemDetailContainer = () => {
       stock: 5,
       category: "Remeras",
       image: "../src/assets/images/merch/jsRemera.jpg",
+      precio: 70,
     },
     {
       id: 2,

@@ -26,10 +26,35 @@ export const CartProvider = ({ children }) => {
   const isInCart = (itemId) => {
     return cart.some((prod) => prod.id === itemId);
   };
+  const calcularTotal = () => {
+    let total = 0;
+    cart.forEach((prod) => {
+      total += prod.precio * prod.quantity;
+    });
+    return total;
+  };
+  const total = calcularTotal();
+
+  const calcularTotalQuantity = () => {
+    let totalQuantity = 0;
+    cart.forEach((prod) => {
+      totalQuantity += prod.quantity;
+    });
+    return totalQuantity;
+  };
+  const totalQuantity = calcularTotalQuantity();
 
   return (
     <CartContext.Provider
-      value={{ cart, addItem, removeItem, clearCart, isInCart }}
+      value={{
+        cart,
+        addItem,
+        removeItem,
+        clearCart,
+        isInCart,
+        total,
+        totalQuantity,
+      }}
     >
       {children}
     </CartContext.Provider>
