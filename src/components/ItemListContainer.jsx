@@ -112,3 +112,45 @@ const ItemListContainer = () => {
 };
 
 export default ItemListContainer;
+
+// import React, { useEffect, useState } from "react";
+// import ItemList from "./ItemList";
+// import { Center } from "@chakra-ui/react";
+// import { useParams } from "react-router-dom";
+// import { getDocs, collection, getFirestore } from "firebase/firestore";
+
+// const ItemListContainer = () => {
+//   const { category } = useParams();
+//   const [loading, setLoading] = useState(true);
+//   const [productos, setProducts] = useState([]);
+
+//   useEffect(() => {
+//     const db = getFirestore();
+//     const itemsCollection = collection(db, "Teclados");
+
+//     getDocs(itemsCollection)
+//       .then((snapshot) => {
+//         const docs = snapshot.docs.map((doc) => doc.data());
+//         setProducts(docs);
+//         setLoading(false);
+//       })
+//       .catch((error) => {
+//         console.error("Error fetching data:", error);
+//       });
+//   }, []);
+//   useEffect(() => {
+//     console.log("Productos cargados:", productos);
+//   }, [productos]);
+
+//   const filteredProducts = productos.filter(
+//     (producto) => producto.category === category
+//   );
+
+//   return (
+//     <Center p="1rem">
+//       {loading ? <p>Cargando...</p> : <ItemList productos={filteredProducts} />}
+//     </Center>
+//   );
+// };
+
+// export default ItemListContainer;

@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const productos = [
@@ -102,5 +103,31 @@ const ItemDetailContainer = () => {
     </>
   );
 };
-
 export default ItemDetailContainer;
+
+// import React, { useEffect, useState } from "react";
+// import ItemDetail from "./ItemDetail";
+// import { doc, getDoc, getFirestore } from "firebase/firestore";
+
+// const ItemDetailContainer = () => {
+//   const [producto, setProduct] = useState(null);
+
+//   useEffect(() => {
+//     const db = getFirestore();
+//     const oneItem = doc(db, "Merch", "7Tgfstxli9my762aH0a4");
+//     getDoc(oneItem).then((snapshot) => {
+//       if (snapshot.exists()) {
+//         const data = snapshot.data();
+//         setProduct(data);
+//       }
+//     });
+//   }, []);
+
+//   return (
+//     <>
+//       <ItemDetail productos={producto} />
+//     </>
+//   );
+// };
+
+// export default ItemDetailContainer;

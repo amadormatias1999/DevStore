@@ -33,6 +33,9 @@ const NavBar = () => {
                 <MenuItem>
                   <Link to={`/category/${"Teclados"}`}>Teclados</Link>
                 </MenuItem>
+                <MenuItem>
+                  <Link to={`/category/${"Monitores"}`}>Teclados</Link>
+                </MenuItem>
               </MenuList>
             </Menu>
           </Box>{" "}
