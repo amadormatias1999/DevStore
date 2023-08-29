@@ -24,12 +24,12 @@ export const CartProvider = ({ children }) => {
   };
 
   const isInCart = (itemId) => {
-    return cart.some((prod) => prod.id === itemId);
+    return cart.find((prod) => prod.id === itemId);
   };
   const calcularTotal = () => {
     let total = 0;
     cart.forEach((prod) => {
-      total += prod.precio * prod.quantity;
+      total += prod.Precio * prod.quantity;
     });
     return total;
   };

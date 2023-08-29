@@ -9,10 +9,10 @@ const ItemList = ({ productos }) => {
           <Item
             key={p.id}
             id={p.id}
-            nombre={p.nombre}
+            nombre={p.Nombre}
             description={p.description}
-            image={p.image}
-            precio={p.precio}
+            image={p.Imagen}
+            precio={p.Precio}
           />
         );
       })}
