@@ -106,7 +106,7 @@ const ItemDetail = ({}) => {
 
     getDoc(productRef).then((snapshot) => {
       if (snapshot.exists()) {
-        setProduct(snapshot.data());
+        setProduct({ ...snapshot.data(), id: snapshot.id });
       } else {
         console.log("Error");
       }
