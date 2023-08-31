@@ -37,7 +37,21 @@ h1 {
   line-height: 1.1;
   text-align: center;
 }
+h4,
+h2,
+h3 {
+  text-transform: uppercase;
+  text-align: center;
+}
+ul {
+  text-align: center;
+  text-decoration: none;
+  list-style-type: decimal;
+}
 
+.total-productos {
+  text-align: center;
+}
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -106,6 +120,13 @@ header {
   padding: 2rem;
   border-radius: 0.3rem;
 }
+.card-detail {
+  margin: 2rem 30rem;
+  padding: 2rem;
+  background-color: #d8d9da;
+
+  border-radius: 0.3rem;
+}
 
 .btn-a {
   background-color: #646cff;
@@ -117,4 +138,22 @@ header {
   width: 300px;
   height: 200px;
   object-fit: contain;
+}
+.checkout-cart {
+  background-color: #d8d9da;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-radius: 0.3rem;
+}
+.checkout-cart_body {
+  background-color: white;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-radius: 0.3rem;
+}
+
+.heading-card {
+  text-align: left;
 }

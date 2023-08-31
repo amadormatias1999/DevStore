@@ -1,4 +1,3 @@
-// SOLUCION
 import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { Center } from "@chakra-ui/react";
