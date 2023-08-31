@@ -46,7 +46,7 @@ h3 {
 ul {
   text-align: center;
   text-decoration: none;
-  list-style-type: decimal;
+  list-style: none;
 }
 
 .total-productos {

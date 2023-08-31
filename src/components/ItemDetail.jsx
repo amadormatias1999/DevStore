@@ -66,7 +66,7 @@ const ItemDetail = ({}) => {
         <CardFooter>
           {quantityAdded > 0 ? (
             <Button>
-              <Link to="/cart">Finalizar compra</Link>
+              <Link to="/cart">Ir al carrito de compras</Link>
             </Button>
           ) : (
             <ItemCount onAdd={handleOnAdd} />
