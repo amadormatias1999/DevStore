@@ -8,6 +8,7 @@ import {
   FormHelperText,
   Center,
   Button,
+  ButtonGroup,
 } from "@chakra-ui/react";
 
 const Checkout = () => {
@@ -83,9 +84,12 @@ const Checkout = () => {
                 <FormHelperText>
                   Nunca compartiremos tu correo electrónico.
                 </FormHelperText>
-                <Button type="submit">
-                  Enviar información y Finalizar compra
-                </Button>
+                <ButtonGroup>
+                  {" "}
+                  <Button type="submit" colorScheme="blue">
+                    Enviar información y Finalizar compra
+                  </Button>
+                </ButtonGroup>
               </FormControl>
             </Center>
           </form>

@@ -13,7 +13,10 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
+body {
+  margin: 0;
+  padding: 0;
+}
 html {
   box-sizing: border-box;
 }
@@ -86,9 +89,9 @@ button:focus-visible {
 nav {
   border-bottom: solid 0.5px gainsboro;
   color: white;
+  background-color: gainsboro;
 }
 nav :hover {
-  background-color: gainsboro;
   color: black;
 }
 header {
@@ -97,7 +100,7 @@ header {
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.7)
     ),
-    url(/src/assets/images/pexels-christina-morillo-1181677.jpg);
+    url(/src/assets/images/pexels-daniel-putzer-633409.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
