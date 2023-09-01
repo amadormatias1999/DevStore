@@ -1,7 +1,7 @@
 # DevStore
 
 Enlace Video Drive:
-https://drive.google.com/drive/folders/15hjKYuvKEF2mtSlCuCxqi-1nbbGiqpVq?usp=sharing
+https://drive.google.com/file/d/1NivF7jaPP-Kfwix9TUnCcX5d7DttqV7Y/view?usp=sharing
 
 # Proyecto React: E-Commerce App
 
